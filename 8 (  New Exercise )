@@ -1,0 +1,93 @@
+#include <stdio.h>
+
+int power(int a, int b) {
+    if (b == 0)
+        return 1;                  
+    else
+        return a * power(a, b - 1); 
+}
+
+int factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;                    
+    else
+        return n * factorial(n - 1); 
+}
+
+
+int sum(int n) {
+    if (n == 0)
+        return 0;               
+    else
+        return n + sum(n - 1);   
+}
+
+int main() {
+    int choice;
+
+    printf("Choose operation:\n");
+    printf("1. Power (a^b)\n");
+    printf("2. Factorial\n");
+    printf("3. Sum of first n numbers\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        int a, b;
+        printf("Enter base and exponent: ");
+        scanf("%d %d", &a, &b);
+        printf("%d raised to %d is %d\n", a, b, power(a, b));
+    }
+    else if (choice == 2) {
+        int n;
+        printf("Enter a number: ");
+        scanf("%d", &n);
+        printf("Factorial of %d is %d\n", n, factorial(n));
+    }
+    else if (choice == 3) {
+        int n;
+        printf("Enter n: ");
+        scanf("%d", &n);
+        printf("Sum of first %d numbers = %d\n", n, sum(n));
+    }
+    else {
+        printf("Invalid choice!\n");
+    }
+
+    return 0;
+}
+
+
+Output :
+
+Choose operation:
+1. Power (a^b)
+2. Factorial
+3. Sum of first n numbers
+Enter your choice: 1
+Enter base and exponent: 2 4
+2 raised to 4 is 16
+
+
+Choose operation:
+1. Power (a^b)
+2. Factorial
+3. Sum of first n numbers
+Enter your choice: 2
+Enter a number: 5
+Factorial of 5 is 120
+
+
+Choose operation:
+1. Power (a^b)
+2. Factorial
+3. Sum of first n numbers
+Enter your choice: 3
+Enter n: 5
+Sum of first 5 numbers = 15
+
+
+
+
+
+
